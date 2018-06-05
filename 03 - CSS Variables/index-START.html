@@ -45,6 +45,27 @@
   </style>
 
   <script>
+
+      const img = document.querySelector('img');
+
+      document.getElementById('blur').addEventListener("input", function() {
+        const blurValue = document.getElementById('blur').value;
+        img.style.filter = `blur(${blurValue}px)`;
+        // "`" - these backticks indicate template literals; they can contain placeholder expressions denoted by ${expression})
+      });
+
+      document.getElementById('base').addEventListener("input", function() {
+        const baseColor = document.getElementById('base').value;
+        const js = document.querySelector('.hl');
+        js.style.color = `${baseColor}`;
+        img.style.backgroundColor = `${baseColor}`;
+      });
+
+      document.getElementById('spacing').addEventListener("input", function() {
+        const spacingValue = document.getElementById('spacing').value;
+        img.style.padding = `${spacingValue}px`;
+      });
+
   </script>
 
 </body>
